@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Learn vue.js</title>
+    </head>
+    <body>
+     <div id="vue1">
+        <h1>welcome</h1>
+        <p>Aymae {{ name }}</p> <!-- we can use js functions here -->
+        <p>age: {{ age + 'Years' }}</p>
+        <p>skills:{{ skills[0] }}</p>
+        <p>you are {{ isSubscribed ? 'Subscribed' : 'Not Subscribed' }}</p>
+        <p>{{ yourAgeInDays() }} </p>  
+    </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+             new Vue({
+                el: '#vue1',
+                data: {
+                    name: 'Mehdi',
+                    age: '24',
+                    skills:['react','vue'],
+                    isSubscribed: true,
+                },
+                methods: {
+                    yourAgeInDays: function() {
+                        return 'your age in days is:' + this.age * 365;
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
+<!--methods-->
