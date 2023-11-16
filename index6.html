@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Learn vue.js</title>
+    </head>
+    <body>
+     <div id="vue1">
+     <!-- v-bind -->    
+        <p>welcome {{ name }}</p>
+        <a v-bind:href="imageUrl">
+            <img v-bind:src="imageSrc" v-bind:alt="imageAltText">
+        </a>
+     <!-- v-on -->
+        <p> {{ counter }} </p>
+        <button @click="counter++"> increase </button> <!-- v-on:click="" -->
+     </div>
+        <script src="js/vue.js"></script> 
+        <script>
+            var vm = new Vue({
+                el: '#vue1',
+                data: {
+                    name: 'Aymane',
+                    imageSrc: 'imgs/01.png',
+                    imageAltText: 'text1',
+                    imageUrl: 'https:/www.google.com',
+                    counter: 0,
+                },
+            })
+        </script>
+    </body>
+</html>
+<!-- Directives -->
+<!-- v-bind v-on -->
+<!-- v-on with events -->
