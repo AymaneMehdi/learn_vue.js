@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Learn vue.js</title>
+    </head>
+    <body>
+     <div id="vue1">
+        <!-- Components -->
+        <app-count></app-count>
+        <app-count-item></app-count-item>
+     </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            /* Global Component */
+            var AppCount = {
+                data: function () {
+                    return {
+                        name: 'Aymane',
+                        count: 0,
+                    }
+                },
+                template: '<p>{{name}}</p>'
+            }
+
+            /*Local Componenet*/
+            Vue.component('AppCount',{
+                data: function () {
+                    return {
+                        name: 'Aymane',
+                        count: 0,
+                    }
+                },
+                template: '<p>{{name}}</p>'
+            })
+
+            /*Local Componenet*/
+            Vue.component('app-count-item',{
+                data: function () {
+                    return {
+                        name: 'Omar',
+                        count: 0,
+                    }
+                },
+                template: '<p>{{name}}</p>'
+            })
+
+            var app = new Vue({
+                el: '#vue1',
+                data: {
+                    name: 'Mehdi'
+                }
+            })
+            /* Global Component */
+            components: {
+                'app-count: AppCount'
+            }
+        </script>
+    </body>
+</html>
+
+<!-- Components -->
+<!-- Local Component + Global Component -->
