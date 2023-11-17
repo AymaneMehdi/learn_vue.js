@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Learn vue.js</title>
+    </head>
+    <body>
+     <div id="vue1">{{ name }}
+        <!-- Components -->
+        <app-count></app-count>
+        <app-count></app-count>
+        <app-count></app-count>
+        <app-count></app-count>
+     </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+
+            Vue.component('app-count',{
+                data: function () {
+                    return {
+                        name: 'Aymane',
+                        count: 0,
+                    }
+                },
+                template: '<p @click="count++">{{ name }} clicked {{ count }}</p>'
+            })
+
+            var app = new Vue({
+                el: '#vue1',
+                data: {
+                    name: 'Aymane'
+                }
+            })
+        </script>
+    </body>
+</html>
+
+<!-- Components -->
